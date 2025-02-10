@@ -14,6 +14,42 @@ movl $0, -4(%ebp)    # Initialise la somme à 0 dans une variable locale
 
 # DEBUT COMPLETION
 
+.data
+n: .int 10
+.text
+.globl calculSomme
+
+calculSomme:
+    movl n, %ecx
+    movl (-4(%ebb)), %ebx
+    pusl %ebx
+    adl %1, %eax // 1/!0 
+    movl %eax, %ebx
+    div %eax, %ebx
+    sub %ecx, %eax
+    je finSomme
+    pusl %eax
+    jmp calculSomme
+
+finSomme:
+    popl 
+    somme
+
+
+    
+
+    
+
+
+
+    
+
+
+
+
+
+
+
 
 # FIN COMPLETION
 # NE RIEN MODIFIER APRES CETTE LIGNE
