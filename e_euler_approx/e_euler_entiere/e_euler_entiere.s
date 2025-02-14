@@ -18,7 +18,7 @@ movl $0, -4(%ebp)    # Initialise la somme à 0 dans une variable locale
 
 # DEBUT COMPLETION
 
-movl %esi, %edi       //esi = n, n =10, 10 itérattions
+movl %esi, %edi       #esi = n, n =10, 10 itérattions
 
 
 calcul_somme:
@@ -27,16 +27,15 @@ calcul_somme:
 fact_loop:  
     imul %edi, %ebx      
     decl %edi
-    jnz fact_loop       //si %edi != 0, boucle n fois
-    
+    jnz fact_loop       #si %edi != 0, boucle n fois
+
     movl $1, %eax
-    divl %ebx           //1/n!
-    addl %eax, -4(%ebp)
+    divl %ebx          #1/n!
+    addl %edx, -4(%ebp)
 
     decl %esi
-    cmpl $0, $esi
+    cmpl $0, %esi
     jnz calcul_somme
-
 
 # FIN COMPLETION
 # NE RIEN MODIFIER APRES CETTE LIGNE
